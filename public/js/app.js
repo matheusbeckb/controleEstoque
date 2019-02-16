@@ -51802,7 +51802,10 @@ Vue.component('formulario', __webpack_require__(/*! ./components/Formulario.vue 
 
 var app = new Vue({
   el: '#app',
-  store: store
+  store: store,
+  mounted: function mounted() {
+    document.getElementById('app').style.display = "block";
+  }
 });
 
 /***/ }),
