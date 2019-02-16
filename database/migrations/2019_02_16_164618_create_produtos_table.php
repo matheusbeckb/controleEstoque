@@ -17,7 +17,7 @@ class CreateProdutosTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->integer('quantidade_min')->unsigned();
-            $table->string('cod_sku', 13);
+            $table->string('prefixo_sku', 5);
             $table->integer('seq_sku')->unsigned()->default(1);
             $table->timestamps();
         });

@@ -17,7 +17,7 @@ class CreateEntradasTable extends Migration
             $table->increments('id');
             $table->integer('quantidade');
             $table->double('valor', 10, 2);
-            $table->integer('cod_sku');
+            $table->string('cod_sku', 13);
             $table->dateTime('data');
             $table->enum('tipo_entrada', ['S', 'A']);
             $table->timestamps();

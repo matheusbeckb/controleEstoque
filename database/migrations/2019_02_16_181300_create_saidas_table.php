@@ -17,6 +17,8 @@ class CreateSaidasTable extends Migration
             $table->increments('id');
             $table->integer('quantidade');
             $table->double('valor');
+            $table->string('cod_sku', 13);
+            $table->dateTime('data');
             $table->enum('tipo_saida', ['S', 'A']);
             $table->timestamps();
         });
