@@ -5,7 +5,7 @@
         <painel titulo="Lista de Produtos">
             <migalhas v-bind:lista="{{ $listaMigalhas }}"></migalhas>
                 <tabela-lista
-                    v-bind:titulos="['#', 'Título', 'Descrição']"
+                    v-bind:titulos="['#', 'Nome', 'Categoria', 'Quantidade Min.', 'SKU']"
                     v-bind:itens="{{ $listaProdutos }}"
                     criar="#criar"
                     detalhe="#detalhe"

@@ -20,8 +20,8 @@ class ProdutosController extends Controller
         ]);
 
         $listaProdutos = json_encode([
-            ['id' => 1, "titulo" => "teste 1", "descricao" => "teste 1"],
-            ['id' => 2, "titulo" => "teste 2", "descricao" => "teste 2"]
+            ['id' => 1, "nome" => "teste 1", "categoria" => "teste 1", "quantidade min" => "10", "sku" => "BR-001"],
+            ['id' => 2, "nome" => "teste 2", "categoria" => "teste 2", "quantidade min" => "8" , "sku" => "BR-002"]
         ]);
 
         return view('admin.produtos.index', compact('listaMigalhas', 'listaProdutos'));
