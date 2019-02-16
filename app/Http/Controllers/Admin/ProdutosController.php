@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProdutosController extends Controller
 {
@@ -18,12 +19,12 @@ class ProdutosController extends Controller
             ['titulo' => "Lista de Produtos", "url" => ""]
         ]);
 
-        $listaMigalhas = json_encode([
+        $listaProdutos = json_encode([
             ['id' => 1, "titulo" => "teste 1", "descricao" => "teste 1"],
             ['id' => 2, "titulo" => "teste 2", "descricao" => "teste 2"]
         ]);
 
-        return view('admin.artigos.index', compact('listaMigalhas', 'listaMigalhas'));
+        return view('admin.produtos.index', compact('listaMigalhas', 'listaProdutos'));
     }
 
     /**

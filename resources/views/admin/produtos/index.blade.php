@@ -2,11 +2,11 @@
 
 @section('content')
     <pagina tamanho="12">
-        <painel titulo="Lista de Artigos">
+        <painel titulo="Lista de Produtos">
             <migalhas v-bind:lista="{{ $listaMigalhas }}"></migalhas>
                 <tabela-lista
                     v-bind:titulos="['#', 'Título', 'Descrição']"
-                    v-bind:itens="{{ $listaArtigos }}"
+                    v-bind:itens="{{ $listaProdutos }}"
                     criar="#criar"
                     detalhe="#detalhe"
                     editar="#editar"
