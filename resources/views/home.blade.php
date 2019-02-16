@@ -6,7 +6,7 @@
         <migalhas v-bind:lista="{{ $listaMigalhas }}"></migalhas>
         <div class="row">
             <div class="col-md-4">
-                <caixa quantidade="80" titulo="Artigos" url="{{ route('artigos.index') }}" cor="orange" icone="fa fa-shopping-cart"></caixa>
+                <caixa quantidade="80" titulo="Produtos" url="{{ route('produtos.index') }}" cor="orange" icone="fa fa-shopping-cart"></caixa>
             </div>
             <div class="col-md-4">
                 <caixa quantidade="1500" titulo="Usuários" url="#" cor="blue" icone="ion-person-stalker"></caixa>
