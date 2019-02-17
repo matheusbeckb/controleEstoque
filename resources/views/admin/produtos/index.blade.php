@@ -16,17 +16,19 @@
             <migalhas v-bind:lista="{{ $listaMigalhas }}"></migalhas>
                 <tabela-lista
                     v-bind:titulos="['#', 'Nome', 'Categoria', 'Quantidade Min.', 'SKU']"
-                    v-bind:itens="{{ $listaProdutos }}"
+                    v-bind:itens="{{ json_encode($listaProdutos) }}"
                     criar="#criar"
                     detalhe="/admin/produtos/"
                     editar="/admin/produtos/"
-                    deletar="#deletar"
-                    token="84654654"
+                    deletar="/admin/produtos/"
+                    token="{{ csrf_token() }}"
                     ordem="asc"
                     ordemcol="2"
                     modal="sim">
                 </tabela-lista>
-
+                <div>
+                    {{ $listaProdutos->links()}}
+                </div>
         </painel>
     </pagina>
 

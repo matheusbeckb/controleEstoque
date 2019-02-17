@@ -21,7 +21,7 @@ class ProdutosController extends Controller
             ['titulo' => "Lista de Produtos", "url" => ""]
         ]);
 
-        $listaProdutos = json_encode(Produto::select('id', 'nome', 'categoria_id', 'quantidade_min', 'sku')->get());
+        $listaProdutos = Produto::select('id', 'nome', 'categoria_id', 'quantidade_min', 'sku')->paginate(2);
 
         return view('admin.produtos.index', compact('listaMigalhas', 'listaProdutos'));
     }
@@ -119,6 +119,7 @@ class ProdutosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Produto::find($id)->delete();
+        return redirect()->back();
     }
 }
