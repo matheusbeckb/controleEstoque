@@ -56,7 +56,7 @@
     </modal>
 
     <modal nome="editar">
-        <formulario id="formEditar" css="" action="#" method="put" enctype="multipart/form-data" token="12345">
+        <formulario id="formEditar" css="" v-bind:action="'/admin/produtos/' + $store.state.item.id" method="put" enctype="multipart/form-data" token="{{ csrf_token() }}">
             <div class="form-group">
                     <label for="nome">Nome</label>
                 <input type="text" class="form-control" id="nome" v-model="$store.state.item.nome" name="nome" placeholder="Nome" value="{{ old('nome') }}">

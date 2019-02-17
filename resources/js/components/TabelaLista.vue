@@ -27,7 +27,7 @@
                             <modal-link v-if="detalhe && modal" v-bind:item="item" v-bind:url="detalhe" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link>
 
                             <a v-if="editar && !modal" :href="editar"> Editar |</a>
-                            <modal-link v-if="editar && modal" v-bind:item="item" tipo="link" nome="editar" titulo=" Editar |" css=""></modal-link>
+                            <modal-link v-if="editar && modal" v-bind:item="item" v-bind:url="editar" tipo="link" nome="editar" titulo=" Editar |" css=""></modal-link>
 
                             <a href="#" v-on:click="executaForm(index)"> Deletar</a>
                         </form>
@@ -36,7 +36,7 @@
                             <modal-link v-if="detalhe && modal" v-bind:item="item" v-bind:url="detalhe" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link>
 
                             <a v-if="editar && !modal" :href="editar"> Editar |</a>
-                            <modal-link v-if="editar && modal" tipo="link" nome="editar" titulo=" Editar |" css=""></modal-link>
+                            <modal-link v-if="editar && modal" tipo="link" v-bind:item="item" v-bind:url="editar" nome="editar" titulo=" Editar |" css=""></modal-link>
 
                             <a v-if="deletar" v-bind:href="deletar"> Deletar</a>
                         </span>
@@ -44,7 +44,7 @@
                             <a v-if="detalhe && !modal" :href="detalhe">Detalhe |</a>
                             <modal-link v-if="detalhe && modal" v-bind:item="item" v-bind:url="detalhe" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link>
                             <a v-if="editar && !modal"  :href="editar"> Editar</a>
-                            <modal-link v-if="editar && modal" tipo="link" nome="editar" titulo=" Editar" css=""></modal-link>
+                            <modal-link v-if="editar && modal" tipo="link" v-bind:item="item" v-bind:url="editar" nome="editar" titulo=" Editar" css=""></modal-link>
                         </span>
                     </td>
                 </tr>

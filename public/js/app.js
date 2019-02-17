@@ -38255,6 +38255,7 @@ var render = function() {
                               ? _c("modal-link", {
                                   attrs: {
                                     item: item,
+                                    url: _vm.editar,
                                     tipo: "link",
                                     nome: "editar",
                                     titulo: " Editar |",
@@ -38313,6 +38314,8 @@ var render = function() {
                               ? _c("modal-link", {
                                   attrs: {
                                     tipo: "link",
+                                    item: item,
+                                    url: _vm.editar,
                                     nome: "editar",
                                     titulo: " Editar |",
                                     css: ""
@@ -38363,6 +38366,8 @@ var render = function() {
                               ? _c("modal-link", {
                                   attrs: {
                                     tipo: "link",
+                                    item: item,
+                                    url: _vm.editar,
                                     nome: "editar",
                                     titulo: " Editar",
                                     css: ""

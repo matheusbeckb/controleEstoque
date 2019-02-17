@@ -94,7 +94,21 @@ class ProdutosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $validacao = \Validator::make($data, [
+            "nome"           => "required",
+            "categoria_id"   => "required|integer",
+            "quantidade_min" => "required|integer",
+            "sku"            => "required|min:5|max:5"
+        ]);
+
+        if ($validacao->fails()) {
+            return redirect()->back()->withErrors($validacao)->withInput();
+        }
+
+        Produto::find($id)->update($data);
+
+        return redirect()->back();
     }
 
     /**
