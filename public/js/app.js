@@ -2204,10 +2204,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['tipo', 'nome', 'titulo', 'css', 'item'],
+  props: ['tipo', 'nome', 'titulo', 'css', 'item', 'url'],
   methods: {
     preencheFormulario: function preencheFormulario() {
-      this.$store.commit('setItem', this.item);
+      var _this = this;
+
+      axios.get(this.url + this.item.id).then(function (res) {
+        _this.$store.commit('setItem', res.data);
+      });
     }
   }
 });
@@ -38232,6 +38236,7 @@ var render = function() {
                               ? _c("modal-link", {
                                   attrs: {
                                     item: item,
+                                    url: _vm.detalhe,
                                     tipo: "link",
                                     nome: "detalhe",
                                     titulo: " Detalhe |",
@@ -38289,6 +38294,7 @@ var render = function() {
                               ? _c("modal-link", {
                                   attrs: {
                                     item: item,
+                                    url: _vm.detalhe,
                                     tipo: "link",
                                     nome: "detalhe",
                                     titulo: " Detalhe |",
@@ -38338,6 +38344,7 @@ var render = function() {
                               ? _c("modal-link", {
                                   attrs: {
                                     item: item,
+                                    url: _vm.detalhe,
                                     tipo: "link",
                                     nome: "detalhe",
                                     titulo: " Detalhe |",

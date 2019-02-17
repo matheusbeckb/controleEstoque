@@ -24,7 +24,7 @@
                             <input type="hidden" name="_token" v-bind:value="token">
 
                             <a v-if="detalhe && !modal" :href="detalhe">Detalhe |</a>
-                            <modal-link v-if="detalhe && modal" v-bind:item="item" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link>
+                            <modal-link v-if="detalhe && modal" v-bind:item="item" v-bind:url="detalhe" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link>
 
                             <a v-if="editar && !modal" :href="editar"> Editar |</a>
                             <modal-link v-if="editar && modal" v-bind:item="item" tipo="link" nome="editar" titulo=" Editar |" css=""></modal-link>
@@ -33,7 +33,7 @@
                         </form>
                         <span v-if="!token">
                             <a v-if="detalhe && !modal" :href="detalhe">Detalhe |</a>
-                            <modal-link v-if="detalhe && modal" v-bind:item="item" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link>
+                            <modal-link v-if="detalhe && modal" v-bind:item="item" v-bind:url="detalhe" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link>
 
                             <a v-if="editar && !modal" :href="editar"> Editar |</a>
                             <modal-link v-if="editar && modal" tipo="link" nome="editar" titulo=" Editar |" css=""></modal-link>
@@ -42,7 +42,7 @@
                         </span>
                         <span v-if="token && !deletar">
                             <a v-if="detalhe && !modal" :href="detalhe">Detalhe |</a>
-                            <modal-link v-if="detalhe && modal" v-bind:item="item" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link>
+                            <modal-link v-if="detalhe && modal" v-bind:item="item" v-bind:url="detalhe" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></modal-link>
                             <a v-if="editar && !modal"  :href="editar"> Editar</a>
                             <modal-link v-if="editar && modal" tipo="link" nome="editar" titulo=" Editar" css=""></modal-link>
                         </span>
