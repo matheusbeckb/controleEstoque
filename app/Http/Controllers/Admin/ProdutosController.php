@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Produto;
+
 class ProdutosController extends Controller
 {
     /**
@@ -19,10 +21,7 @@ class ProdutosController extends Controller
             ['titulo' => "Lista de Produtos", "url" => ""]
         ]);
 
-        $listaProdutos = json_encode([
-            ['id' => 1, "nome" => "teste 1", "categoria" => "teste 1", "quantidade min" => "10", "sku" => "BR-001"],
-            ['id' => 2, "nome" => "teste 2", "categoria" => "teste 2", "quantidade min" => "8" , "sku" => "BR-002"]
-        ]);
+        $listaProdutos = json_encode(Produto::select('id', 'nome', 'categoria_id', 'quantidade_min', 'sku')->get());
 
         return view('admin.produtos.index', compact('listaMigalhas', 'listaProdutos'));
     }
@@ -45,7 +44,11 @@ class ProdutosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        Produto::create($data);
+
+        return redirect()->back();
     }
 
     /**

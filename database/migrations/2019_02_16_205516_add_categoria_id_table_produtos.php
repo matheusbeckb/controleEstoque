@@ -14,7 +14,7 @@ class AddCategoriaIdTableProdutos extends Migration
     public function up()
     {
         Schema::table('produtos', function (Blueprint $table) {
-            $table->integer('categoria_id')->unsigned();
+            $table->integer('categoria_id')->unsigned()->after('seq_sku');
             $table->foreign('categoria_id')->references('id')->on('categorias');
         });
     }

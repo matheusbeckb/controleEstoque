@@ -21,17 +21,23 @@
     </pagina>
 
     <modal nome="adicionar" titulo="Adicionar">
-        <formulario id="formAdicionar" css="" action="#" method="put" enctype="multipart/form-data" token="12345">
-            <form>
+    <formulario id="formAdicionar" css="" action="{{ route('produtos.store') }}" method="post" enctype="" token="{{ csrf_token() }}">
                 <div class="form-group">
-                    <label for="titulo">Título</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
                 </div>
                 <div class="form-group">
-                    <label for="descricao">Descrição</label>
-                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+                    <label for="categoria_id">Categoria</label>
+                    <input type="number" class="form-control" id="categoria_id" name="categoria_id" placeholder="Categoria">
                 </div>
-            </form>
+                <div class="form-group">
+                    <label for="quantidade_min">Quantidade Mínima</label>
+                    <input type="number" class="form-control" id="quantidade_min" name="quantidade_min" placeholder="Quantidade Mínima">
+                </div>
+                <div class="form-group">
+                    <label for="sku">Prefixo SKU</label>
+                    <input type="text" class="form-control" id="sku" name="sku" placeholder="Prefixo SKU" maxlength="5">
+                </div>
         </formulario>
         <span slot="botoes">
             <button form="formAdicionar" class="btn btn-info">Adicionar</button>
@@ -56,7 +62,7 @@
             <button form="formEditar" class="btn btn-info">Atualizar</button>
         </span>
     </modal>
-    <modal nome="detalhe" v-bind:titulo="$store.state.item.titulo">
-        <p>@{{ $store.state.item.descricao }} </p>
+    <modal nome="detalhe" titulo="Produto">
+        <p>@{{ $store.state.item.nome }} </p>
     </modal>
 @endsection
