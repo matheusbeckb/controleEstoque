@@ -2,6 +2,16 @@
 
 @section('content')
     <pagina tamanho="12">
+
+        @if ($errors->all())
+            <div class="alert alert-danger alert-dismissible text-center" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                @foreach ($errors->all() as $key => $value)
+                    <span><strong>{{ $value }}</strong></span>
+                @endforeach
+            </div>
+        @endif
+
         <painel titulo="Lista de Produtos">
             <migalhas v-bind:lista="{{ $listaMigalhas }}"></migalhas>
                 <tabela-lista
@@ -24,19 +34,19 @@
     <formulario id="formAdicionar" css="" action="{{ route('produtos.store') }}" method="post" enctype="" token="{{ csrf_token() }}">
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="{{ old('nome') }}">
                 </div>
                 <div class="form-group">
                     <label for="categoria_id">Categoria</label>
-                    <input type="number" class="form-control" id="categoria_id" name="categoria_id" placeholder="Categoria">
+                    <input type="number" class="form-control" id="categoria_id" name="categoria_id" placeholder="Categoria" value="{{ old('categoria_id') }}">
                 </div>
                 <div class="form-group">
                     <label for="quantidade_min">Quantidade Mínima</label>
-                    <input type="number" class="form-control" id="quantidade_min" name="quantidade_min" placeholder="Quantidade Mínima">
+                    <input type="number" class="form-control" id="quantidade_min" name="quantidade_min" placeholder="Quantidade Mínima" value="{{ old('quantidade_min') }}">
                 </div>
                 <div class="form-group">
                     <label for="sku">Prefixo SKU</label>
-                    <input type="text" class="form-control" id="sku" name="sku" placeholder="Prefixo SKU" maxlength="5">
+                    <input type="text" class="form-control" id="sku" name="sku" placeholder="Prefixo SKU" maxlength="5" value="{{ old('sku') }}">
                 </div>
         </formulario>
         <span slot="botoes">
